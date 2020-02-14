@@ -11,6 +11,8 @@ namespace CalificarTaxis.Web.Entiries.Data
         }
         public DbSet<TaxiEntity> taxiEntities { get; set; }
         public DbSet<TripEntity> trips { get; set; }
+
+
         public DbSet<TripDetailEntity> tripDetails { get; set; }
     }
 }
