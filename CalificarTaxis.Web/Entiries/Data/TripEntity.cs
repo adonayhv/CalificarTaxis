@@ -44,6 +44,8 @@ namespace CalificarTaxis.Web.Entiries.Data
 
         public TaxiEntity Taxi { get; set; }
         public ICollection<TripDetailEntity> tripDetails  { get; set; }
+        public UserEntity  User { get; set; }
+
 
 
 
