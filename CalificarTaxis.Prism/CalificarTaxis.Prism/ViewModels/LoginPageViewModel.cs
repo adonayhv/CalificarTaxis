@@ -4,16 +4,15 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CalificarTaxis.Prism.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class LoginPageViewModel : ViewModelBase
     {
-        public MainPageViewModel(INavigationService navigationService)
+        public LoginPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            Title = "Main Page";
+            Title = "Login";
         }
     }
 }

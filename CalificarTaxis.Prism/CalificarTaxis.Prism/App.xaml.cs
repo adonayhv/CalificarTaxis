@@ -1,9 +1,10 @@
 ﻿using Prism;
 using Prism.Ioc;
 using CalificarTaxis.Prism.ViewModels;
-using CalificarTaxis.Prism.Views;
+//using CalificarTaxis.Prism.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using CalificarTaxis.Prism.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CalificarTaxis.Prism
@@ -23,13 +24,21 @@ namespace CalificarTaxis.Prism
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("TaxiMasterDetailPage/NavigationPage/HomePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            //containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+
+            containerRegistry.RegisterForNavigation<TaxiMasterDetailPage, TaxiMasterDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<TaxiHistoryPage, TaxiHistoryPageViewModel>();
+            containerRegistry.RegisterForNavigation<GroupPage, GroupPageViewModel>();
+            containerRegistry.RegisterForNavigation<ModifyUserPage, ModifyUserPageViewModel>();
+            containerRegistry.RegisterForNavigation<ReportPage, ReportPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
         }
     }
 }

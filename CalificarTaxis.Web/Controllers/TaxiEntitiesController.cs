@@ -24,7 +24,7 @@ namespace CalificarTaxis.Web.Controllers
         // GET: TaxiEntities
         public async Task<IActionResult> Index()
         {
-            return View(await _context.taxiEntities.OrderBy(t => t.Plaque).ToListAsync());
+            return View(await _context.TaxiEntities.OrderBy(t => t.Plaque).ToListAsync());
         }
 
 
@@ -37,7 +37,7 @@ namespace CalificarTaxis.Web.Controllers
                 return NotFound();
             }
 
-            var model = await _context.taxiEntities
+            var model = await _context.TaxiEntities
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (model == null)
             {
@@ -81,7 +81,7 @@ namespace CalificarTaxis.Web.Controllers
                 return NotFound();
             }
 
-            var model = await _context.taxiEntities.FindAsync(id);
+            var model = await _context.TaxiEntities.FindAsync(id);
             if (model == null)
             {
                 return NotFound();
@@ -117,14 +117,14 @@ namespace CalificarTaxis.Web.Controllers
                 return NotFound();
             }
 
-            var model = await _context.taxiEntities
+            var model = await _context.TaxiEntities
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (model == null)
             {
                 return NotFound();
             }
 
-            _context.taxiEntities.Remove(model);
+            _context.TaxiEntities.Remove(model);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

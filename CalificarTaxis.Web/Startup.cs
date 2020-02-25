@@ -53,6 +53,8 @@ namespace CalificarTaxis.Web
             });
 
             services.AddTransient<SeedDb>();
+            services.AddScoped<IConverterHelper, ConverterHelper>();
+
             services.AddScoped<IUserHelper, UserHelper>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

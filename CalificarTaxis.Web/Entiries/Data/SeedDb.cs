@@ -75,9 +75,9 @@ namespace CalificarTaxis.Web.Entiries.Data
             UserEntity user1,
             UserEntity user2)
         {
-            if (!_dataContext.taxiEntities.Any())
+            if (!_dataContext.TaxiEntities.Any())
             {
-                _dataContext.taxiEntities.Add(new TaxiEntity
+                _dataContext.TaxiEntities.Add(new TaxiEntity
                 {
                     User = driver,
                     Plaque = "TPQ123",
@@ -106,7 +106,7 @@ namespace CalificarTaxis.Web.Entiries.Data
                     }
                 });
 
-                _dataContext.taxiEntities.Add(new TaxiEntity
+                _dataContext.TaxiEntities.Add(new TaxiEntity
                 {
                     Plaque = "THW321",
                     User = driver,

@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
+
+
 namespace CalificarTaxis.Web.Entiries.Data
 {
     public class DataContext : IdentityDbContext<UserEntity>
@@ -10,13 +12,13 @@ namespace CalificarTaxis.Web.Entiries.Data
         {
 
         }
-        public DbSet<TaxiEntity> taxiEntities { get; set; }
-        public DbSet<TripEntity> trips { get; set; }
-         public DbSet<TripDetailEntity> tripDetails { get; set; }
+        public DbSet<TaxiEntity> TaxiEntities { get; set; }
+
+        public DbSet<TripEntity> Trips { get; set; }
+
+         public DbSet<TripDetailEntity> TripDetails { get; set; }
         public DbSet<UserGroupEntity> UserGroups { get; set; }
-
-
-
+               
         protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
