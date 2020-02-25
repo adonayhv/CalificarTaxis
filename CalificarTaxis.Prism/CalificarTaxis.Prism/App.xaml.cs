@@ -5,6 +5,7 @@ using CalificarTaxis.Prism.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using CalificarTaxis.Prism.Views;
+using CalificarTaxis.Common.Services;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CalificarTaxis.Prism
@@ -29,6 +30,8 @@ namespace CalificarTaxis.Prism
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IGeolocatorService, GeolocatorService>();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
             //containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
